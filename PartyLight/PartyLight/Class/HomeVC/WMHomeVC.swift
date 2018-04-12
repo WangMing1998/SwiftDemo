@@ -44,6 +44,9 @@ class WMHomeVC: UIViewController {
         rightButton?.addTarget(self, action:#selector(topButtonsTapped(sender:)), for:.touchUpInside)
         
         
+
+        
+        
     }
     
     @objc func topButtonsTapped(sender:UIButton){

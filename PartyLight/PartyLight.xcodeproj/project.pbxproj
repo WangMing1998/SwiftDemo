@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8206C660207F40CB00970C02 /* color_picker_cycle.png in Resources */ = {isa = PBXBuildFile; fileRef = 8206C65F207F40C900970C02 /* color_picker_cycle.png */; };
+		8206C662207F40F800970C02 /* color_picker_selector.png in Resources */ = {isa = PBXBuildFile; fileRef = 8206C661207F40F800970C02 /* color_picker_selector.png */; };
 		8227EABA2077416A007EB30E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8227EAB92077416A007EB30E /* AppDelegate.swift */; };
 		8227EABF2077416B007EB30E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8227EABD2077416B007EB30E /* Main.storyboard */; };
 		8227EAC12077416B007EB30E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8227EAC02077416B007EB30E /* Assets.xcassets */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8206C65F207F40C900970C02 /* color_picker_cycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_picker_cycle.png; sourceTree = "<group>"; };
+		8206C661207F40F800970C02 /* color_picker_selector.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_picker_selector.png; sourceTree = "<group>"; };
 		8227EAB62077416A007EB30E /* PartyLight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PartyLight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8227EAB92077416A007EB30E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8227EABE2077416B007EB30E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -204,6 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				82C63793207B66AD000FBF6A /* WMColorPicker.swift */,
+				8206C65F207F40C900970C02 /* color_picker_cycle.png */,
+				8206C661207F40F800970C02 /* color_picker_selector.png */,
 			);
 			path = WMTools;
 			sourceTree = "<group>";
@@ -315,8 +321,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8206C660207F40CB00970C02 /* color_picker_cycle.png in Resources */,
 				8227EAC42077416B007EB30E /* LaunchScreen.storyboard in Resources */,
 				8227EAC12077416B007EB30E /* Assets.xcassets in Resources */,
+				8206C662207F40F800970C02 /* color_picker_selector.png in Resources */,
 				8227EABF2077416B007EB30E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
