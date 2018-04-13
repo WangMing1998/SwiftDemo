@@ -12,12 +12,14 @@ class WMHomeVC: UIViewController {
     var current = 0;
     var leftButton:UIButton?
     var rightButton:UIButton?
+    let pickerVC:WMPickerColorVC = WMPickerColorVC()
+    let viewContainer:UIView = UIView()
     override func viewDidLoad() {
         super.viewDidLoad()
         // 图片大小501 * 169
         let topViewHeight = SCREEN_WIDTH * CGFloat((169.0 / BaseWidth))
-        let yPosition = ISIPHONEX ? (20.0+24.0+25.0):(20.0+25.0)
-        let topMeumView = UIView.init(frame:CGRect(x: 0.0, y:Double(yPosition), width:Double(SCREEN_WIDTH), height:Double(topViewHeight)))
+        let yPosition:CGFloat = ISIPHONEX ? (20.0+24.0+25.0):(20.0+25.0)
+        let topMeumView = UIView.init(frame:CGRect(x: 0.0, y:yPosition, width:SCREEN_WIDTH, height:topViewHeight))
         view.addSubview(topMeumView)
         
         // 添加两个按钮
@@ -44,7 +46,15 @@ class WMHomeVC: UIViewController {
         rightButton?.addTarget(self, action:#selector(topButtonsTapped(sender:)), for:.touchUpInside)
         
         
-
+        // 添加控制器
+//        pickerVC.view.frame = view.bounds;
+        let y:CGFloat = (topMeumView.y) + (topMeumView.height);
+        viewContainer.frame = CGRect(x: 0, y:y, width: SCREEN_WIDTH, height: view.height - (y+topMeumView.height + yPosition))
+//        viewContainer.backgroundColor = UIColor.yellow.withAlphaComponent(0.3)
+        view.addSubview(viewContainer)
+        
+        pickerVC.view.frame = CGRect(x: 0, y: 0, width: viewContainer.width, height: viewContainer.height)
+        viewContainer.addSubview(pickerVC.view);
         
         
     }
@@ -56,9 +66,19 @@ class WMHomeVC: UIViewController {
         if sender.tag == 0{
             leftButton?.isSelected = true
             rightButton?.isSelected = false
+            UIView.animate(withDuration: 0.5, animations: {
+                self.pickerVC.view.isHidden = false
+                self.viewContainer.addSubview(self.pickerVC.view)
+            })
+            
         }else{
             leftButton?.isSelected = false
             rightButton?.isSelected = true
+            UIView.animate(withDuration: 0.5, animations: {
+                self.pickerVC.view.isHidden = true
+                self.pickerVC.view.removeFromSuperview()
+            })
+            
         }
         current = sender.tag;
         

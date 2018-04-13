@@ -45,7 +45,7 @@ class WMColorPicker: UIControl {
         isOpaque = false
         radius = frame.size.width/2.0                                             
         if(UIScreen.main.bounds.width == 414){
-            radius = frame.width/2.0 - Selector_width/1.5
+            radius = frame.width/2.0 - Selector_width+20.0
         }
         colorsImage = UIImage.init(named:"color_picker_cycle")!
         colorsImgeView = UIImageView.init(image: UIImage.init(named: "color_picker_cycle"))
@@ -75,8 +75,6 @@ class WMColorPicker: UIControl {
     fileprivate func updatePositionForSelectorImage(){
         let handle = pointFromAngle(angleInt:angle)
         selectorImageView?.frame = CGRect(x: handle.x, y: handle.y, width: Selector_width, height: Selector_width)
-        let centerPoint = CGPoint(x: (selectorImageView?.center.x)!, y: (selectorImageView?.center.y)!)
-        print("centerX",centerPoint.x,"centerY",centerPoint.y)
     }
   
    
@@ -102,49 +100,6 @@ class WMColorPicker: UIControl {
         return (CGFloat(result >= 0 ? result:result + 360.0))
         
     }
-    
-    // 从图片上取色
-//    fileprivate func getColorWithImage(image:UIImage,point:CGPoint)->UIColor{
-//        let pointX = trunc(point.x)
-//        let pointY = trunc(point.y)
-//        let cgImage = image.cgImage
-//        let width = frame.width
-//        let height = frame.height
-//        let colorSpace = CGColorSpaceCreateDeviceRGB()
-//        let bytesPerPixel:Int = 4
-//        let bytesPerRow = bytesPerPixel * 1
-//        let bitsPerComponent:UInt = 8
-//        let pixeData:UnsafeMutablePointer<CGFloat> = UnsafeMutablePointer<CGFloat>.allocate(capacity: 4)
-//        let bitmapInfo = CGBitmapInfo(rawValue: CGBitmapInfo.byteOrder32Big.rawValue | CGImageAlphaInfo.premultipliedLast.rawValue)
-//        let context : CGContext = CGContext(data: pixeData,
-//                                            width: 1,
-//                                            height: 1,
-//                                            bitsPerComponent: Int(bitsPerComponent),
-//                                            bytesPerRow: bytesPerRow,
-//                                            space: colorSpace,
-//                                            bitmapInfo: bitmapInfo.rawValue)!
-//
-//        context.setBlendMode(.copy)
-//        context.translateBy(x: -pointX, y: (pointY - CGFloat(height)))
-//        let drawIn = CGRect(x: 0.0, y: 0.0, width: width, height: height)
-//        context.draw(cgImage!, in:drawIn , byTiling: true)
-//        let getColor:UIColor = UIColor(red: pixeData[0] / 255.0, green: pixeData[1] / 255.0, blue:pixeData[2] / 255.0, alpha: pixeData[3] / 255.0)
-//        return getColor
-//     }
-//
-    fileprivate func getColorWithImage(image:UIImage,point:CGPoint)->UIColor{
-        let pixelData = CGDataProvider.init(data:CGImageGetDataProvider((colorsImage?.cgImage)!) as! CFData)
-        let data:UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData as! CFData)
-        let pixelInfo: Int = ((Int(frame.width) * Int(point.y)) + Int(point.x)) * 4
-        let r = CGFloat(data[pixelInfo]) / CGFloat(255.0)
-        let g = CGFloat(data[pixelInfo+1]) / CGFloat(255.0)
-        let b = CGFloat(data[pixelInfo+2]) / CGFloat(255.0)
-        let a = CGFloat(data[pixelInfo+3]) / CGFloat(255.0)
-        let getColor = UIColor(red: r, green: g, blue: b, alpha:a)
-        return getColor
-    }
-    
-    
     // 触摸事件
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         super.beginTracking(touch, with: event)
@@ -171,15 +126,13 @@ class WMColorPicker: UIControl {
     
     fileprivate func moveHandle(point:CGPoint){
         // 计算图片旋转角度
-        let centerPoint = CGPoint(x: frame.width/2, y: frame.height/2)
+        let centerPoint = CGPoint(x: frame.width/2.0, y: frame.height/2.0)
         let floatAngle = angleFromNorth(p1: centerPoint, p2: point, flipped:false)
         let intAngle = Int(floor(Double(floatAngle)))
-        self.angle = 360 - intAngle
+        angle = 360 - intAngle
         let selectorCenterPoint = CGPoint(x: (selectorImageView?.center.x)!, y: (selectorImageView?.center.y)!)
-        currentColor = getColorWithImage(image:colorsImage!, point: selectorCenterPoint)
-        print("currentColor",currentColor)
         updatePositionForSelectorImage()
-        
+        currentColor = UIImage.getColorWith(colorsImage, point: selectorCenterPoint)
         // 这里可以通过block回调当前最新颜色值
     }
     

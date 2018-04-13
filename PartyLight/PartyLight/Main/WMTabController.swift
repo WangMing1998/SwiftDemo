@@ -12,26 +12,18 @@ import UIKit
    
     var  placeView:UIView?
     var  currentIndex = 0
-    var testview:UIView?
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTabbar()
         addViewController()
-        let colorPicker = WMColorPicker.init(frame: CGRect(x:(self.view.frame.size.width - 300.0)/2, y: (self.view.frame.size.height - 300.0)/2, width: 300, height: 300))
-        colorPicker .addTarget(self, action: #selector(colorChange(sender:)), for:.valueChanged)
-        view.addSubview(colorPicker)
+
+       
         
-        testview = UIView.init(frame: CGRect(x:50, y: 100, width: 100, height: 100))
-        testview?.backgroundColor = UIColor.red;
-        view.addSubview(testview!);
+
         
     
     }
     
-    @objc func colorChange(sender:WMColorPicker){
-     testview?.backgroundColor = sender.currentColor
-    }
-  
     fileprivate func setUpTabbar() {
         // 添加背景视图
         let backgroundImage = UIImageView.init(frame: UIScreen.main.bounds)
