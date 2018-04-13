@@ -14,19 +14,24 @@ class WMPickerColorVC: UIViewController {
         super.viewDidLoad()
 //        view.backgroundColor = UIColor.red
         // 添加拾色器
-        let colorPicker = WMColorPicker.init(frame: CGRect(x:0, y:view.height/2 - 150 - view.y, width: 300, height: 300))
-        colorPicker.addTarget(self, action: #selector(colorChange(sender:)), for:.valueChanged)
-//        colorPicker.center = view.center
-        colorPicker.centerX = view.centerX
-        colorPicker.backgroundColor = UIColor.yellow.withAlphaComponent(0.5)
-        view.addSubview(colorPicker)
+     
       
     }
 
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        let colorPicker = WMColorPicker.init(frame: CGRect(x:0, y:view.height/2 - 150, width: 300, height: 300))
+        colorPicker.addTarget(self, action: #selector(colorChange(sender:)), for:.valueChanged)
+        //        colorPicker.center = view.center
+        colorPicker.centerX = view.centerX
+        colorPicker.backgroundColor = UIColor.yellow.withAlphaComponent(0.5)
+        view.addSubview(colorPicker)
+    }
+    
     @objc func colorChange(sender:WMColorPicker){
 
-        print("sender.currentColor",sender.currentColor)
+        
     }
     
     

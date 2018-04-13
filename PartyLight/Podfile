@@ -1,0 +1,14 @@
+target 'PartyLight' do
+
+pod 'EZAudio', '~> 1.1.4'#播放器 https://github.com/Alamofire/Alamofire
+pod 'SnapKit'#布局
+pod 'Alamofire'#网络请求库 https://github.com/ashleymills/Reachability.swift
+pod 'ReachabilitySwift'#网络检测库 https://github.com/nixzhu/MonkeyKing
+pod 'NVActivityIndicatorView' #加载指示器 https://github.com/ninjaprox/NVActivityIndicatorView
+pod 'Charts'          #图表 https://github.com/danielgindi/Charts
+pod 'ChartsRealm'     #图表 https://github.com/danielgindi/Charts
+pod 'Koloda' #卡片动画 https://github.com/Yalantis/Koloda
+pod 'LTMorphingLabel' #特效label https://github.com/lexrus/LTMorphingLabel
+pod 'SQLite.swift' #数据库
+end
+
