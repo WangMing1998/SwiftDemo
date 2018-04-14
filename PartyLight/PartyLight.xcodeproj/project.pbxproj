@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		808EA042EEF51B2BEDD5B7D2 /* Pods_PartyLight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A68A34550C1180B00737736 /* Pods_PartyLight.framework */; };
 		82045F2B208057DF002DD769 /* UIImage+getColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 82045F2A208057DF002DD769 /* UIImage+getColor.m */; };
 		82045F302080A372002DD769 /* WMPickerColorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82045F2F2080A372002DD769 /* WMPickerColorVC.swift */; };
 		82045F322080AD7A002DD769 /* WMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82045F312080AD7A002DD769 /* WMView.swift */; };
@@ -27,7 +28,6 @@
 		8292C5A020786AB400ABC796 /* WMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8292C59F20786AB400ABC796 /* WMButton.swift */; };
 		8292C5A2207AF28F00ABC796 /* PrefixHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8292C5A1207AF28F00ABC796 /* PrefixHeader.swift */; };
 		82C63794207B66AD000FBF6A /* WMColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C63793207B66AD000FBF6A /* WMColorPicker.swift */; };
-		A0CD031D103C8AA5BE78FA16 /* libPods-PartyLight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A2AC4FCF15E4076FBA6D0AC /* libPods-PartyLight.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,7 @@
 
 /* Begin PBXFileReference section */
 		03C4EDFAC82AAE30F897A752 /* Pods-PartyLight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyLight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PartyLight/Pods-PartyLight.debug.xcconfig"; sourceTree = "<group>"; };
-		1A2AC4FCF15E4076FBA6D0AC /* libPods-PartyLight.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PartyLight.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A68A34550C1180B00737736 /* Pods_PartyLight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PartyLight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82045F28208057DE002DD769 /* PartyLight-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PartyLight-Bridging-Header.h"; sourceTree = "<group>"; };
 		82045F29208057DF002DD769 /* UIImage+getColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+getColor.h"; sourceTree = "<group>"; };
 		82045F2A208057DF002DD769 /* UIImage+getColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+getColor.m"; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0CD031D103C8AA5BE78FA16 /* libPods-PartyLight.a in Frameworks */,
+				808EA042EEF51B2BEDD5B7D2 /* Pods_PartyLight.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,7 +119,7 @@
 		6863A57792F63EA870CDA1FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1A2AC4FCF15E4076FBA6D0AC /* libPods-PartyLight.a */,
+				6A68A34550C1180B00737736 /* Pods_PartyLight.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -389,9 +389,38 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PartyLight/Pods-PartyLight-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/ChartsRealm/ChartsRealm.framework",
+				"${BUILT_PRODUCTS_DIR}/EZAudio/EZAudio.framework",
+				"${BUILT_PRODUCTS_DIR}/Koloda/Koloda.framework",
+				"${BUILT_PRODUCTS_DIR}/LTMorphingLabel/LTMorphingLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/TPCircularBuffer/TPCircularBuffer.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChartsRealm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZAudio.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Koloda.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTMorphingLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPCircularBuffer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

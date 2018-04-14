@@ -1,19 +1,64 @@
 PODS:
+  - Alamofire (4.6.0)
+  - Charts (3.0.4):
+    - Charts/Core (= 3.0.4)
+  - Charts/Core (3.0.4)
+  - ChartsRealm (3.0.4):
+    - Charts (= 3.0.4)
+    - RealmSwift (~> 2.10)
   - EZAudio (1.1.5):
     - EZAudio/Full (= 1.1.5)
   - EZAudio/Core (1.1.5)
   - EZAudio/Full (1.1.5):
     - EZAudio/Core
     - TPCircularBuffer (= 1.1)
+  - Koloda (4.3.1):
+    - pop (~> 1.0)
+  - LTMorphingLabel (0.5.6)
+  - NVActivityIndicatorView (4.1.1):
+    - NVActivityIndicatorView/Presenter (= 4.1.1)
+  - NVActivityIndicatorView/Presenter (4.1.1)
+  - pop (1.0.10)
+  - ReachabilitySwift (4.1.0)
+  - Realm (2.10.2):
+    - Realm/Headers (= 2.10.2)
+  - Realm/Headers (2.10.2)
+  - RealmSwift (2.10.2):
+    - Realm (= 2.10.2)
+  - SnapKit (4.0.0)
+  - SQLite.swift (0.11.4):
+    - SQLite.swift/standard (= 0.11.4)
+  - SQLite.swift/standard (0.11.4)
   - TPCircularBuffer (1.1)
 
 DEPENDENCIES:
+  - Alamofire
+  - Charts
+  - ChartsRealm
   - EZAudio (~> 1.1.4)
+  - Koloda
+  - LTMorphingLabel
+  - NVActivityIndicatorView
+  - ReachabilitySwift
+  - SnapKit
+  - SQLite.swift
 
 SPEC CHECKSUMS:
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  Charts: 0705898046257443f0afbbc3179f4b67507b6e48
+  ChartsRealm: 3cf7c9ebf9c6312efbf418cf1da91d72d5416b26
   EZAudio: 3b1cb4b6d7ebca68f0c2478576d75940aad4aa99
+  Koloda: 0d39b2aa188ccd1fac48d752acaf9802e683c625
+  LTMorphingLabel: bdb51d4682e9822da89da6f567bd8aa456fd6650
+  NVActivityIndicatorView: 60109b9bf46efc2e71ab81453196ccdfdfeea870
+  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
+  ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
+  Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
+  RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SQLite.swift: 3e3bee21da701b5b9f87c4a672cb54f233505692
   TPCircularBuffer: 4960a919e667280f7f38963d771f45871b64fe62
 
-PODFILE CHECKSUM: e9737307e6e029dc93fbc3fb7be141e0babf0150
+PODFILE CHECKSUM: 4fd96cb6dfb2b84683ab50b065e33df23bedf2d3
 
 COCOAPODS: 1.4.0

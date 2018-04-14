@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6807B53894B5AFB5835D307C300B635E"
+               BlueprintIdentifier = "68E504159A95438F18EAACAB7BBD121C"
                BlueprintName = "EZAudio"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libEZAudio.a">
+               BuildableName = "EZAudio.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

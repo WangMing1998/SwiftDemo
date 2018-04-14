@@ -43,20 +43,13 @@ class WMColorPicker: UIControl {
     override init(frame: CGRect) {
         super.init(frame: frame)
         isOpaque = false
-        radius = frame.size.width/2.0                                             
-        if(UIScreen.main.bounds.width == 414){
-            radius = frame.width/2.0 - Selector_width+20.0
-        }
+      
         colorsImage = UIImage.init(named:"color_picker_cycle")!
         colorsImgeView = UIImageView.init(image: UIImage.init(named: "color_picker_cycle"))
-        colorsImgeView?.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
+        colorsImgeView?.contentMode = .scaleAspectFill
         addSubview(colorsImgeView!);
-        
-        let xPosition = frame.width - Selector_width
-        let yPosition = frame.height/2 - Selector_width/2
-        
         selectorImageView = UIImageView.init(image: UIImage.init(named: "color_picker_selector"))
-        selectorImageView?.frame = CGRect(x: xPosition, y:yPosition, width:Selector_width, height: Selector_width)
+      
         addSubview(selectorImageView!)
 
         
@@ -64,6 +57,14 @@ class WMColorPicker: UIControl {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        radius = frame.size.width/2.0
+        if(UIScreen.main.bounds.width == 414){
+            radius = frame.width/2.0 - Selector_width+20.0
+        }
+        let xPosition = frame.width - Selector_width
+        let yPosition = frame.height/2 - Selector_width/2
+        colorsImgeView?.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
+        selectorImageView?.frame = CGRect(x: xPosition, y:yPosition, width:Selector_width, height: Selector_width)
         updatePositionForSelectorImage()
     }
     

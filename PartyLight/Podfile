@@ -1,3 +1,6 @@
+platform :ios, '10.2'
+
+use_frameworks!
 target 'PartyLight' do
 
 pod 'EZAudio', '~> 1.1.4'#播放器 https://github.com/Alamofire/Alamofire
